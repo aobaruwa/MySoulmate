@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <!-- <head>
+    <meta charset="UTF-8">
+    <title>Sign Up Page</title>
+  </head> -->
+  <head>
+    <title>Sign Up</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sign Up</h1>
+    <form action="signup.php" method="POST">
+      <label for="user_id">User ID: (An integer)</label>
+      <input type="text" id="user_id" name="user_id" required><br><br>
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required><br><br>
+      <label for="religiosity">Religiosity:</label>
+      <input type="text" id="religiosity" name="religiosity" required><br><br>
+      <label for="height">Height:</label>
+      <input type="text" id="height" name="height" required><br><br>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="18" max="120" required><br><br>
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select an option</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select><br><br>
+      <label for="smokes">Smokes:</label>
+      <select id="smokes" name="smokes" required>
+        <option value="">Select an option</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="Sometimes">Sometimes</option>
+      </select><br><br>
+      <label for="drinks">Drinks:</label>
+      <select id="drinks" name="drinks" required>
+        <option value="">Select an option</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="Sometimes">Sometimes</option>
+      </select><br><br>
+      <label for="race">Race:</label>
+      <input type="text" id="race" name="race" required><br><br>
+      <label for="has_kids">Has kids:</label>
+      <select id="has_kids" name="has_kids" required>
+        <option value="">Select an option</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br><br>
+      <label for="language">Language:</label>
+      <input type="text" id="language" name="language" required><br><br>
+      <label for="hobby">Hobby:</label>
+      <input type="text" id="hobby" name="hobby" required><br><br>
+      <button type="submit" name="submit">Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome Page</title>
+	<style>
+		
+		.button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 50vh;
+		}
+		
+		button {
+			margin: 0 20px;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			background-color: #3498db;
+			color: #fff;
+			font-size: 18px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<!-- <centre><h1>Welcome User !</h1></centre> -->
+	<h1 style="text-align: center;">Welcome !</h1>
+	<form method="post" action="welcome.php">
+		<button type="submit" name="action" value="explore">Explore</button>
+		<button type="submit" name="action" value="view_matches">View Matches</button>
+		<button type="submit" name="action" value="view_likes">View Likes</button>
+		<button type="submit" name="action" value="view_passes">View Passes</button>
+		<button type="submit" name="action" value="view_preferences">View Preferences</button>
+		<button type="submit" name="action" value="edit_preferences">Edit Preferences</button>
+	</form>
+	<!-- <div class="button-container">
+		<button>Explore</button>
+		<button>View Matches</button>
+		<button>View Likes</button>
+		<button>View Passes</button>
+		<button>Edit Preferences</button>
+	</div> -->
+</body>
+</html>
