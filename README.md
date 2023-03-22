@@ -1,2 +1,2 @@
 # MySoulmate
-An online Dating Web Application 
+An online Dating Web Application prototype built in HTML, CSS and PHP.
