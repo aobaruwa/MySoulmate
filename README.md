@@ -1,5 +1,5 @@
 # MySoulmate
-An online Dating Web Application prototype built with HTML, CSS and PHP and a SQL server.
+An online Dating Web Application built with HTML, CSS and PHP and a SQL server.
 # How it works
 Users can "SIGN UP" and interact with other users of opposite genders with the hope of finding a match, dating, and eventually getting married. 
 All user interactions will be recorded in a unified SQL database containing eight unique (albeit related) tables. 
