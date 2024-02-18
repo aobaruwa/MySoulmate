@@ -8,4 +8,4 @@ Figure 1 is an Entity-relational (ER) diagram that describes the various entity 
 # Datatypes
 The three primary datatypes will be "TEXT" for attributes like name, address, hobbies, race, location, conversations; "INT" for attributes like "AGE" and "USER_ID", and the datatype for Timestamps, will be "DATETIME".
 # Entity Relationship Diagram
-[Hyperlink](ER_model.png)
+[Figure 1](ER_model.png)
