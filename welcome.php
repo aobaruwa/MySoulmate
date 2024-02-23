@@ -1,17 +1,9 @@
 <?php
 session_start(); // Start the session
-include('connectionData.txt');
-$server="ix.cs.uoregon.edu";
-$user="guest";
-$pass="guest";
-$dbname="mySoulmate";
-$port="3449";
-
+include ('connectionData.txt')
 $conn = mysqli_connect($server, $user, $pass, $dbname, $port)
  or die('Error connecting to MySQL server.');
-?>
 
-<?php
 $user_id = $_SESSION['user_id'];
 
 
@@ -21,7 +13,7 @@ if (isset($_POST['action'])) {
     switch ($action) {
         case 'explore':
             // code to handle "Explore" button action
-            $query = "SELECT DISTINCT user_id, location, religiosity, height, age, 
+            $query = "SELECT DISTINCT user_id, location, height, age, 
                                     gender, smokes, drinks, race, has_kids, language, hobby
                     FROM users 
                     WHERE user_id != '".$user_id."' AND 
@@ -37,7 +29,7 @@ if (isset($_POST['action'])) {
             while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
               {
                 print "\n";
-                print "$row[user_id]  $row[location]  $row[religiosity], $row[height], $row[age], $row[gender], $row[smokes], $row[drinks], $row[race], $row[has_kids], $row[language], $row[hobby]";
+                print "$row[user_id], $row[location], $row[height], $row[age], $row[gender], $row[smokes], $row[drinks], $row[race], $row[has_kids], $row[language], $row[hobby]";
               }
             print "</pre>";
             
@@ -46,7 +38,7 @@ if (isset($_POST['action'])) {
         case 'view_matches':
             echo "Here are the people you have matched, User $user_id !";
             // code to handle "View Matches" button action
-            $query = "SELECT DISTINCT user_id, location, religiosity, height, age, 
+            $query = "SELECT DISTINCT user_id, location, height, age, 
                                     gender, smokes, drinks, race, has_kids, language, hobby
                     FROM users
                     WHERE user_id IN (SELECT user_id2 from matches WHERE user_id1 = '".$user_id."')
@@ -60,7 +52,7 @@ if (isset($_POST['action'])) {
             while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
               {
                 print "\n";
-                print "$row[user_id]  $row[location]  $row[religiosity], $row[height], $row[age], $row[gender], $row[smokes], $row[drinks], $row[race], $row[has_kids], $row[language], $row[hobby]";
+                print "$row[user_id]  $row[location]  $row[height], $row[age], $row[gender], $row[smokes], $row[drinks], $row[race], $row[has_kids], $row[language], $row[hobby]";
               }
             print "</pre>";
             
@@ -70,7 +62,7 @@ if (isset($_POST['action'])) {
             // code to handle "View Likes" button action
             echo "Here are the people you've liked so far, User $user_id !";
             // pretty print the results using var_dump()
-            $query = "SELECT DISTINCT user_id, location, religiosity, height, age, 
+            $query = "SELECT DISTINCT user_id, location, height, age, 
                                     gender, smokes, drinks, race, has_kids, language, hobby
                     FROM users
                     WHERE user_id IN (SELECT user_id2 from likes WHERE user_id1 = '".$user_id."')
@@ -83,7 +75,7 @@ if (isset($_POST['action'])) {
             while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
               {
                 print "\n";
-                print "$row[user_id]  $row[location]  $row[religiosity], $row[height], $row[age], $row[gender], $row[smokes], $row[drinks], $row[race], $row[has_kids], $row[language], $row[hobby]";
+                print "$row[user_id],  $row[location], $row[height], $row[age], $row[gender], $row[smokes], $row[drinks], $row[race], $row[has_kids], $row[language], $row[hobby]";
               }
             print "</pre>";
             
@@ -92,7 +84,7 @@ if (isset($_POST['action'])) {
         case 'view_passes':
             echo "Here are the people you passed so far, User $user_id !";
             // code to handle "View Passes" button action
-            $query = "SELECT DISTINCT user_id, location, religiosity, height, age, 
+            $query = "SELECT DISTINCT user_id, location, height, age, 
                                     gender, smokes, drinks, race, has_kids, language, hobby
                     FROM users
                     WHERE user_id IN (SELECT user_id2 from passes WHERE user_id1 = '".$user_id."')
@@ -104,7 +96,7 @@ if (isset($_POST['action'])) {
             while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
             {
             print "\n";
-            print "$row[user_id]  $row[location]  $row[religiosity], $row[height], $row[age], $row[gender], $row[smokes], $row[drinks], $row[race], $row[has_kids], $row[language], $row[hobby]";
+            print "$row[user_id],  $row[location], $row[height], $row[age], $row[gender], $row[smokes], $row[drinks], $row[race], $row[has_kids], $row[language], $row[hobby]";
             }
             print "</pre>";
             break;
@@ -126,7 +118,7 @@ if (isset($_POST['action'])) {
             while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
             {
             print "\n";
-            print "$row[user_id]  $row[location]  $row[religiosity], $row[height], $row[age], $row[gender], $row[smokes], $row[drinks], $row[race], $row[has_kids], $row[language], $row[hobby]";
+            print "$row[user_id], $row[location], $row[height], $row[age], $row[gender], $row[smokes], $row[drinks], $row[race], $row[has_kids], $row[language], $row[hobby]";
             }
             print "</pre>";
 
