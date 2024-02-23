@@ -1,11 +1,5 @@
 <?php
 //include('connectionData.txt');
-$server="ix-dev.cs.uoregon.edu";
-$user="abaruwa";
-$pass="ltclqsymaobaruwa";
-$dbname="mySoulmate";
-$port="3166";
-
 $conn = mysqli_connect($server, $user, $pass, $dbname, $port)
  or die('Error connecting to MySQL server.');
 // Process form data and insert into preferences table
