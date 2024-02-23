@@ -1,56 +1,128 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Make Preferences</title>
-  </head>
-  <body>
-    <h1>Make Preferences</h1>
+<head>
+  <meta charset="UTF-8">
+  <title>MySoulmate - Make Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh; /* Ensure full viewport height */
+      background-color: #f2f2f2; /* Light background */
+    }
+
+    .container {
+      background-color: #fff; /* White container */
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+      max-width: 400px;
+      margin: 0 auto; /* Center the container */
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="number"], select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      width: 100%;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    select {
+      /* Additional styling for select elements */
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50; /* Green button */
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>MySoulmate - Make Preferences</h1>
     <form action="preferences.php" method="post">
-      <label for="user_id">User ID:</label>
-      <input type="text" id="user_id" name="user_id" required><br><br>
-      <label for="location">Location:</label>
-      <input type="text" id="location" name="location" required><br><br>
-      <label for="religiosity">Religiosity:</label>
-      <input type="text" id="religiosity" name="religiosity" required><br><br>
-      <label for="height">Height:</label>
-      <input type="text" id="height" name="height" required><br><br>
-      <label for="age">Age:</label>
-      <input type="number" id="age" name="age" min="18" max="120" required><br><br>
-      <label for="gender">Gender:</label>
-      <select id="gender" name="gender" required>
-        <option value="">Select an option</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other</option>
-      </select><br><br>
-      <label for="smokes">Smokes:</label>
-      <select id="smokes" name="smokes" required>
-        <option value="">Select an option</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-        <option value="Sometimes">Sometimes</option>
-      </select><br><br>
-      <label for="drinks">Drinks:</label>
-      <select id="drinks" name="drinks" required>
-        <option value="">Select an option</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-        <option value="Sometimes">Sometimes</option>
-      </select><br><br>
-      <label for="race">Race:</label>
-      <input type="text" id="race" name="race" required><br><br>
-      <label for="has_kids">Has kids:</label>
-      <select id="has_kids" name="has_kids" required>
-        <option value="">Select an option</option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select><br><br>
-      <label for="language">Language:</label>
-      <input type="text" id="language" name="language" required><br><br>
-      <label for="hobby">Hobby:</label>
-      <input type="text" id="hobby" name="hobby" required><br><br>
-      <input type="submit" value="Submit">
-    </form>
+      <fieldset>
+        <legend>Basic Information</legend>
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id" required><br><br>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required><br><br>
+      </fieldset>
+
+      <fieldset>
+        <legend>Demographics</legend>
+        <label for="religiosity">Religiosity:</label>
+        <input type="text" id="religiosity" name="religiosity" required><br><br>
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height" required><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" max="120" required><br><br>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select an option</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select><br><br>
+      </fieldset>
+
+      <fieldset>
+        <legend>Lifestyle</legend>
+        <label for="smokes">Smokes:</label>
+        <select id="smokes" name="smokes" required>
+          <option value="">Select an option</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="Sometimes">Sometimes</option>
+        </select><br><br>
+        <label for="drinks">Drinks:</label>
+        <select id="drinks" name="drinks" required>
+          <option value="">Select an option</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No
+            <option value="Sometimes">Sometimes</option>
+          </select><br><br>
+          <label for="race">Race:</label>
+          <input type="text" id="race" name="race" required><br><br>
+          <label for="has_kids">Has kids:</label>
+          <select id="has_kids" name="has_kids" required>
+            <option value="">Select an option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select><br><br>
+          <label for="language">Language:</label>
+          <input type="text" id="language" name="language" required><br><br>
+          <label for="hobby">Hobby:</label>
+          <input type="text" id="hobby" name="hobby" required><br><br>
+        </fieldset>
+  
+        <button type="submit" value="Submit">Submit</button>
+      </form>
+    </div>
   </body>
-</html>
+  </html>
