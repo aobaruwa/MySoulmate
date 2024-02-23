@@ -1,20 +1,17 @@
 <?php
-include('connectionData.txt');
-$server="ix.cs.uoregon.edu";
-$user="guest";
-$pass="guest";
+//include('connectionData.txt');
+$server="ix-dev.cs.uoregon.edu";
+$user="abaruwa";
+$pass="ltclqsymaobaruwa";
 $dbname="mySoulmate";
-$port="3449";
+$port="3166";
 
 $conn = mysqli_connect($server, $user, $pass, $dbname, $port)
  or die('Error connecting to MySQL server.');
-?>
-<?php
 // Process form data and insert into preferences table
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_POST["user_id"];
     $location = $_POST["location"];
-    $religiosity = $_POST["religiosity"];
     $height = $_POST["height"];
     $age = $_POST["age"];
     $gender = $_POST["gender"];
@@ -25,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $language = $_POST["language"];
     $hobby = $_POST["hobby"];
 
-    $sql = "INSERT INTO preferences (user_id, location, religiosity, height, age, gender, smokes, drinks, race, has_kids, language, hobby)
-            VALUES ('$user_id', '$location', '$religiosity', '$height', '$age', '$gender', '$smokes', '$drinks', '$race', '$has_kids', '$language', '$hobby')";
+    $sql = "INSERT INTO preferences (user_id, location,  height, age, gender, smokes, drinks, race, has_kids, language, hobby)
+            VALUES ('$user_id', '$location', '$height', '$age', '$gender', '$smokes', '$drinks', '$race', '$has_kids', '$language', '$hobby')";
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
